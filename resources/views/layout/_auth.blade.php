@@ -15,7 +15,7 @@
                         <!--begin::Logo-->
                         <div class="mb-12 text-center">
                             <a href="/">
-                                <img alt="Logo" src="{{ image('logos/custom-2.svg') }}" class="h-60px h-lg-75px"/>
+                                <img alt="Logo" src="{{ image('logos/GBA-LOGO-clean.png') }}" class="h-60px h-lg-75px"/>
                             </a>
                         </div>
                         <!--end::Logo-->
