@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -11,13 +12,9 @@ class DashboardController extends Controller
         return view('pages.dashboards.index');
     }
 
-    public function company1()
+    public function logout()
     {
-        return view('companies.company1.index');
-    }
-
-    public function company2()
-    {
-        return view('companies.company2.index');
+        Auth::logout();
+        return redirect('/login');
     }
 }

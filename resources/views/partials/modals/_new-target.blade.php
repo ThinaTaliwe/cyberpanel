@@ -18,7 +18,7 @@
 					<!--begin::Heading-->
 					<div class="mb-13 text-center">
 						<!--begin::Title-->
-						<h1 class="mb-3">Set First Target</h1>
+						<h1 class="mb-3">Add New Dependant</h1>
 						<!--end::Title-->
 						<!--begin::Description-->
 						<div class="text-muted fw-semibold fs-5">If you need more info, please check 
@@ -150,4 +150,4 @@
 	</div>
 	<!--end::Modal dialog-->
 </div>
-<!--end::Modal - New Target-->
+<!--end::Modal - New Target-->

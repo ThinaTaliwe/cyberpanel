@@ -1,5 +1,7 @@
 <x-auth-layout>
-
+    <!--begin::Page bg image-->
+	<style>body { background-image: url('assets/media/auth/bg4.jpg'); } [data-bs-theme="dark"] body { background-image: url('assets/media/auth/bg4-dark.jpg'); }</style>
+	<!--end::Page bg image-->
     <!--begin::Form-->
     <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="/" action="login">
         @csrf

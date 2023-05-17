@@ -276,10 +276,5 @@
 		<!--end:Row-->
 	</div>
 	<!--end:Col-->
-	<!--begin:Col-->
-	<div class="col-lg-4">
-		<img src="{{ image('stock/600x600/img-82.jpg') }}" class="rounded mw-100" alt="" />
-	</div>
-	<!--end:Col-->
 </div>
 <!--end:Row-->

@@ -1,33 +1,38 @@
-@extends('layout.master')
+<x-default-layout>
 
-@section('content')
-    <!--begin::Main-->
-    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-        <!--begin::Content wrapper-->
-        <div class="d-flex flex-column flex-column-fluid">
-
-            <!--begin::Content-->
-            <div id="kt_app_content" class="app-content flex-column-fluid">
-                <!--begin::Content container-->
-                <div id="kt_app_content_container" class="app-container container-fluid">
-
-                    <!--begin::Row-->
-                    <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
-                        <!--begin::Col-->
-                        <div class="col-xl-12">
-                            @include('partials/widgets/tables/_widget-14')
-                        </div>
-                        <!--end::Col-->
-                    </div>
-                    <!--end::Row-->
-
-                </div>
-                <!--end::Content container-->
-            </div>
-            <!--end::Content-->
-
+    <!--begin::Row-->
+    <div class="row gx-5 gx-xl-10">
+        <!--begin::Col-->
+        <div class="col-xxl-6 mb-5 mb-xl-10">
+            @include('partials/widgets/charts/_widget-8')
         </div>
-        <!--end::Content wrapper-->
-        @include(config('settings.KT_THEME_LAYOUT_DIR') . '/partials/sidebar-layout/_footer')
+        <!--end::Col-->
     </div>
-@endsection
+    <!--end::Row-->
+
+    <!--begin::Row-->
+    <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+        <!--begin::Col-->
+        <div class="col-xxl-6">
+            @include('partials/widgets/tables/_widget-10')
+        </div>
+        <!--end::Col-->
+    </div>
+    <!--end::Row-->
+
+
+    <!--begin::Row-->
+    <div class="row gx-5 gx-xl-10">
+        <!--begin::Col-->
+        <div class="col-xl-4">
+            @include('partials/widgets/lists/_widget-5')
+        </div>
+        <!--end::Col-->
+        <!--begin::Col-->
+        <div class="col-xl-8">
+            @include('partials/widgets/cards/_widget-18')
+        </div>
+        <!--end::Col-->
+    </div>
+    <!--end::Row-->
+</x-default-layout>

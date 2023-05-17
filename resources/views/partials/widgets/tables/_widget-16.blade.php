@@ -1,3 +1,17 @@
+<?php
+// Establish connection to the database
+$db = new mysqli("localhost", "root", "admin1234", "1office_0_2");
+
+// Check connection
+if ($db->connect_error) {
+  die("Connection failed: " . $db->connect_error);
+}
+
+// Query the database with a limit of 5 rows
+$sql = "SELECT id, business_name, legal_name, country_id FROM business LIMIT 6";
+$result = $db->query($sql);
+?>
+
 <!--begin::Tables widget 16-->
 <div class="card card-flush h-xl-100">
 	<!--begin::Header-->
@@ -5,7 +19,7 @@
 		<!--begin::Title-->
 		<h3 class="card-title align-items-start flex-column">
 			<span class="card-label fw-bold text-gray-800">Authors Achievements</span>
-			<span class="text-gray-400 mt-1 fw-semibold fs-6">Avg. 69.34% Conv. Rate</span>
+			<span class="text-gray-400 mt-1 fw-semibold fs-6"></span>
 		</h3>
 		<!--end::Title-->
 		<!--begin::Toolbar-->
@@ -178,116 +192,49 @@
 		<div class="tab-content">
 			<!--begin::Tap pane-->
 			<div class="tab-pane fade show active" id="kt_stats_widget_16_tab_1">
-				<!--begin::Table container-->
-				<div class="table-responsive">
-					<!--begin::Table-->
-					<table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
-						<!--begin::Table head-->
-						<thead>
-							<tr class="fs-7 fw-bold text-gray-400 border-bottom-0">
-								<th class="p-0 pb-3 min-w-150px text-start">AUTHOR</th>
-								<th class="p-0 pb-3 min-w-100px text-end pe-13">CONV.</th>
-								<th class="p-0 pb-3 w-125px text-end pe-7">CHART</th>
-								<th class="p-0 pb-3 w-50px text-end">VIEW</th>
-							</tr>
-						</thead>
-						<!--end::Table head-->
-						<!--begin::Table body-->
-						<tbody>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div class="symbol symbol-50px me-3">
-											<img src="assets/media/avatars/300-3.jpg" class="" alt="" />
-										</div>
-										<div class="d-flex justify-content-start flex-column">
-											<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Guy Hawkins</a>
-											<span class="text-gray-400 fw-semibold d-block fs-7">Haiti</span>
-										</div>
-									</div>
-								</td>
-								<td class="text-end pe-13">
-									<span class="text-gray-600 fw-bold fs-6">78.34%</span>
-								</td>
-								<td class="text-end pe-0">
-									<div id="kt_table_widget_16_chart_1_1" class="h-50px mt-n8 pe-7" data-kt-chart-color="success"></div>
-								</td>
-								<td class="text-end">
-									<a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">{!! getIcon('black-right', 'fs-2 text-gray-500') !!}</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div class="symbol symbol-50px me-3">
-											<img src="assets/media/avatars/300-2.jpg" class="" alt="" />
-										</div>
-										<div class="d-flex justify-content-start flex-column">
-											<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Jane Cooper</a>
-											<span class="text-gray-400 fw-semibold d-block fs-7">Monaco</span>
-										</div>
-									</div>
-								</td>
-								<td class="text-end pe-13">
-									<span class="text-gray-600 fw-bold fs-6">63.83%</span>
-								</td>
-								<td class="text-end pe-0">
-									<div id="kt_table_widget_16_chart_1_2" class="h-50px mt-n8 pe-7" data-kt-chart-color="danger"></div>
-								</td>
-								<td class="text-end">
-									<a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">{!! getIcon('black-right', 'fs-2 text-gray-500') !!}</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div class="symbol symbol-50px me-3">
-											<img src="assets/media/avatars/300-9.jpg" class="" alt="" />
-										</div>
-										<div class="d-flex justify-content-start flex-column">
-											<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Jacob Jones</a>
-											<span class="text-gray-400 fw-semibold d-block fs-7">Poland</span>
-										</div>
-									</div>
-								</td>
-								<td class="text-end pe-13">
-									<span class="text-gray-600 fw-bold fs-6">92.56%</span>
-								</td>
-								<td class="text-end pe-0">
-									<div id="kt_table_widget_16_chart_1_3" class="h-50px mt-n8 pe-7" data-kt-chart-color="success"></div>
-								</td>
-								<td class="text-end">
-									<a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">{!! getIcon('black-right', 'fs-2 text-gray-500') !!}</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div class="symbol symbol-50px me-3">
-											<img src="assets/media/avatars/300-7.jpg" class="" alt="" />
-										</div>
-										<div class="d-flex justify-content-start flex-column">
-											<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Cody Fishers</a>
-											<span class="text-gray-400 fw-semibold d-block fs-7">Mexico</span>
-										</div>
-									</div>
-								</td>
-								<td class="text-end pe-13">
-									<span class="text-gray-600 fw-bold fs-6">63.08%</span>
-								</td>
-								<td class="text-end pe-0">
-									<div id="kt_table_widget_16_chart_1_4" class="h-50px mt-n8 pe-7" data-kt-chart-color="success"></div>
-								</td>
-								<td class="text-end">
-									<a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">{!! getIcon('black-right', 'fs-2 text-gray-500') !!}</a>
-								</td>
-							</tr>
-						</tbody>
-						<!--end::Table body-->
-					</table>
-					<!--end::Table-->
-				</div>
-				<!--end::Table container-->
+<!--begin::Table container-->
+<div class="table-responsive">
+    <!--begin::Table-->
+    <table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
+        <!--begin::Table head-->
+        <thead>
+            <tr class="fs-7 fw-bold text-gray-400 border-bottom-0">
+                <th class="p-0 pb-3 min-w-150px text-start">Business Name</th>
+                <th class="p-0 pb-3 min-w-100px text-end pe-13">Legal Name</th>
+                <th class="p-0 pb-3 w-125px text-end pe-7">Country ID</th>
+            </tr>
+        </thead>
+        <!--end::Table head-->
+        <!--begin::Table body-->
+        <tbody>
+            <?php while($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="symbol symbol-50px me-3">
+                            <img src="assets/media/avatars/300-3.jpg" class="" alt="" />
+                        </div>
+                        <div class="d-flex justify-content-start flex-column">
+                            <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"><?php echo $row['business_name']; ?></a>
+                            <span class="text-gray-400 fw-semibold d-block fs-7"></span>
+                        </div>
+                    </div>
+                </td>
+                <td class="text-end pe-13">
+                    <span class="text-gray-600 fw-bold fs-6"><?php echo $row['legal_name']; ?></span>
+                </td>
+                <td class="text-end pe-0">
+                    <div class="h-50px mt-n8 pe-7"><?php echo $row['country_id']; ?></div>
+                </td>
+            </tr>
+            <?php endwhile; ?>
+        </tbody>
+        <!--end::Table body-->
+    </table>
+    <!--end::Table-->
+</div>
+<!--end::Table container-->
+
 			</div>
 			<!--end::Tap pane-->
 			<!--begin::Tap pane-->

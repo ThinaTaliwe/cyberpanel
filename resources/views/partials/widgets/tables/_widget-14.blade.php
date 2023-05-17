@@ -1,16 +1,3 @@
-<?php
-// Establish connection to the database
-$db = new mysqli("localhost", "root", "admin1234", "1office_0_2");
-
-// Check connection
-if ($db->connect_error) {
-  die("Connection failed: " . $db->connect_error);
-}
-
-// Query the database with a limit of 5 rows
-$sql = "SELECT id, business_name, legal_name, country_id FROM business LIMIT 6";
-$result = $db->query($sql);
-?>
 
 <!--begin::Table widget 14-->
 <div class="card card-flush h-md-100">
@@ -40,29 +27,52 @@ $result = $db->query($sql);
 				<!--end::Table head-->
 				<!--begin::Table body-->
 				<tbody>
-					<?php
-					if ($result->num_rows > 0) {
-						// output data of each row
-						while(($row = $result->fetch_assoc()) && ($row['id'] < 7)) {
-							?>
-							<tr>
+				<tr>
 								<td>
 									<div class="d-flex align-items-center">
 										<div class="symbol symbol-50px me-3">
 											<img src="assets/media/stock/600x600/img-49.jpg" class="" alt="" />
 										</div>
 										<div class="d-flex justify-content-start flex-column">
-											<a href="<?php echo 'route/'.$row['id']; ?>" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"><?php echo $row['business_name']; ?></a>
-											<span class="text-gray-400 fw-semibold d-block fs-7"><?php echo $row['legal_name']; ?></span>
+											<a href="{{ route('company2') }}" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">GBA System</a>
+											<span class="text-gray-400 fw-semibold d-block fs-7">gba</span>
 										</div>
 									</div>
 								</td>
 								<!-- You can add other columns here -->
 							</tr>
 							<?php
-						}
-					}
-					?>
+if ($result->num_rows > 0) {
+    // output data of each row
+    while(($row = $result->fetch_assoc()) && ($row['id'] < 7)) {
+        $url = $row['id'] == 1 ? '' : '#';
+			if ($row['id'] == 1) {
+				$url = 'https://bchem.co.za/';
+			} elseif ($row['id'] == 4) {
+				$url = 'https://bfrn.co.za/';
+			} else {
+				$url = '#';
+			}
+        ?>
+        <tr>
+            <td>
+                <div class="d-flex align-items-center">
+                    <div class="symbol symbol-50px me-3">
+                        <img src="assets/media/stock/600x600/img-49.jpg" class="" alt="" />
+                    </div>
+                    <div class="d-flex justify-content-start flex-column">
+                        <a href="<?php echo $url; ?>" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"><?php echo $row['business_name']; ?></a>
+                        <span class="text-gray-400 fw-semibold d-block fs-7"><?php echo $row['legal_name']; ?></span>
+                    </div>
+                </div>
+            </td>
+            <!-- You can add other columns here -->
+        </tr>
+        <?php
+    }
+}
+?>
+
 				</tbody>
 				<!--end::Table body-->
 			</table>
